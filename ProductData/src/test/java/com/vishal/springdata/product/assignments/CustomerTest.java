@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.vishal.springdata.GenerationTypeCourse.assignment.entity.Customer;
-import com.vishal.springdata.GenerationTypeCourse.assignment.entity.CustomerRepository;
+import com.vishal.springdata.GenerationTypeCourse.assignment.repository.CustomerRepository;
 
 @SpringBootTest
 public class CustomerTest {

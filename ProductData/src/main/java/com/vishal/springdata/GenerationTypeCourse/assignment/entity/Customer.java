@@ -1,15 +1,19 @@
 package com.vishal.springdata.GenerationTypeCourse.assignment.entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 
 @Entity
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@SequenceGenerator(name="initializedSeq", initialValue=839212)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="initializedSeq")
 	private long id;
 	private String name;
 
