@@ -1,4 +1,4 @@
-package com.vishal.springdata.product;
+package com.vishal.springdata.employeeTest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,7 @@
-package com.vishal.springdata.product.assignments;
+package com.vishal.springdata.assignmentCustomer;
+
+import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,14 @@ public class CustomerTest {
 	public void createCustomerTable() {
 		Customer customer1 = new Customer();
 		customer1.setName("vishal");
-		
 		customerRepo.save(customer1);
+	}
+	
+	@Test
+	public void findCustomerBy() {
+		Customer customer = customerRepo.findById(839212l).get();
+		List<Customer> customerByName = customerRepo.findByName("vishal");
+		System.out.println("customer found by id:: "+customer);
+		System.out.println("customerByName :: "+customerByName);
 	}
 }

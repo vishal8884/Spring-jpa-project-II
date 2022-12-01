@@ -3,6 +3,8 @@ package com.vishal.springdata.product;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,14 +31,15 @@ class ProductDataApplicationTests {
 		product.setDesc("lenovo");
 		product.setPrice(1000d);
 		
-		productRepository.save(product);
+		Product savedProduct = productRepository.save(product);
+		
+		System.out.println("SAVED product to db :: "+savedProduct);
 	}
 	
 	@Test
 	public void testRead() {
 		Product product = productRepository.findById(2).get();
-		assertNotNull(product);
-		assertEquals("laptop", product.getName());
+		System.out.println("product found by id :: "+product);
 	}
 	
 	@Test
@@ -45,6 +48,12 @@ class ProductDataApplicationTests {
 		product.setPrice(2000d);
 		productRepository.save(product);
 	}
+	
+	@Test
+	public void getTotalCount() {
+		System.out.println("Total count of product object is :: "+productRepository.count());
+	}
+	
 
 }
 
