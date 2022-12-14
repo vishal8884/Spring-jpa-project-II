@@ -4,17 +4,17 @@ import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("cc")
+//@DiscriminatorValue("cc")
 public class CreditCard extends Payment{
 
-	private String creditCard;
+	private String cardnumber;
 
-	public String getCreditCard() {
-		return creditCard;
+	public String getCardnumber() {
+		return cardnumber;
 	}
 
-	public void setCreditCard(String creditCard) {
-		this.creditCard = creditCard;
+	public void setCardnumber(String creditCard) {
+		this.cardnumber = creditCard;
 	}
 
 	
