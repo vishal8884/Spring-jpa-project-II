@@ -1,10 +1,12 @@
-package com.vishal.springdata.studentJpql;
+package com.vishal.springdata.studentJpqlAndNativeQuery;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -52,6 +54,11 @@ public class StudentJpqlTests {
 	@Transactional  //mark this along with @Modifying in repo to update/delete use jqpl or native query
 	@Rollback(false)  //used only in test class...in normal class not required
 	public void testDeleteStudentsByFirstName() {
-		repo.deleteStudentsByFirstName("priya");
+		repo.deleteStudentsByFirstName("waters");
+	}
+	
+	@Test
+	public void findAllStudents() {
+		System.out.println("all students with pagination:: "+repo.findAllStudents(PageRequest.of(1, 3,Direction.ASC)));
 	}
 }

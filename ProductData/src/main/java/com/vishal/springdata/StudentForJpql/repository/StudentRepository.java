@@ -2,6 +2,7 @@ package com.vishal.springdata.StudentForJpql.repository;
 
 import java.util.List;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -28,7 +29,19 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 	@Query("delete from Student where firstName = :firstName")
 	void deleteStudentsByFirstName(@Param("firstName") String firstName);
 	
-//	@Modifying
-//	@Query("update Student ")
-//	List<Student> updateStudentById(long id,Student student);
+	
+	
+	
+	@Query("from Student")
+	List<Student> findAllStudents(Pageable pageable);
+	
+	
+	//native query
+	
+	@Query(value="select * from student", nativeQuery = true)
+	List<Student> findAllStudentsNQ();
+	
+	@Query(value="select * from student where fname =:firstName", nativeQuery = true)
+	List<Student> findByFirstNameNQ(@Param("firstName") String firstName);
+	
 }

@@ -1,4 +1,4 @@
-package com.vishal.springdata.studentJpql;
+package com.vishal.springdata.studentJpqlAndNativeQuery;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
