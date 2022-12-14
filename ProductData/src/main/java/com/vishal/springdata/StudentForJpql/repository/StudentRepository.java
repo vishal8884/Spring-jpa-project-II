@@ -27,4 +27,8 @@ public interface StudentRepository extends JpaRepository<Student, Long>{
 	@Modifying //use this while non select operation
 	@Query("delete from Student where firstName = :firstName")
 	void deleteStudentsByFirstName(@Param("firstName") String firstName);
+	
+	@Modifying
+	@Query("update Student ")
+	List<Student> updateStudentById(long id,Student student);
 }
