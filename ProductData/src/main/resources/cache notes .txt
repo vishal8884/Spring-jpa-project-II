@@ -1,0 +1,12 @@
+Types of Catche
+
+1) Level 1 -> basic level catche where different cache for different sessions
+
+
+2) Level 2 -> expense as it has same catche for all sessions accessed by different clients
+
+eg -> 1) ehcatche
+      2) swaram cache
+      3) jboss Tree cache
+      4) OS cache
+      5) TangoSol cache
