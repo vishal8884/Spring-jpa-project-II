@@ -62,10 +62,10 @@ public class CustomerTest {
 	@Test
 	public void testUpdateCustomer() {
 		Customer2 customer = repo.findById(102L).get();
-		customer.setName("waters");
+		customer.setName("waters JJ");
 		
 		Set<PhoneNumber> numbers = customer.getNumbers();
-		numbers.forEach(n -> n.setType("home"));
+		numbers.forEach(n -> n.setType("home2"));
 		
 		Customer2 saved = repo.save(customer);
 		System.out.println("saved customer :: "+saved.getId()+"    name :: "+saved.getName());
