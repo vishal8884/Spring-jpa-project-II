@@ -1,10 +1,13 @@
 package com.vishal.springdata.relationships.oneToMany;
 
 import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.vishal.springdata.relationships.oneToMany.entities.Customer2;
 import com.vishal.springdata.relationships.oneToMany.entities.PhoneNumber;
@@ -43,6 +46,39 @@ public class CustomerTest {
 		
 		repo.save(customer);
 	}
+	
+	
+	@Test
+	@Transactional
+	public void testLoadCustomer() {
+		Customer2 customer = repo.findById(102L).get();
+		System.out.println("customer name :: "+customer.getName());
+		
+		Set<PhoneNumber> numbers = customer.getNumbers();
+		numbers.forEach(n -> System.out.println("customer ph number :: "+n.getNumber()));
+	}
+	
+	
+	@Test
+	public void testUpdateCustomer() {
+		Customer2 customer = repo.findById(102L).get();
+		customer.setName("waters");
+		
+		Set<PhoneNumber> numbers = customer.getNumbers();
+		numbers.forEach(n -> n.setType("home"));
+		
+		Customer2 saved = repo.save(customer);
+		System.out.println("saved customer :: "+saved.getId()+"    name :: "+saved.getName());
+	}
+	
+	@Test
+	public void testDelete() {
+		repo.deleteById(202L);
+	}
+	
+	
+	
+	
 }
 
 

@@ -5,6 +5,7 @@ import java.util.Set;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -18,7 +19,10 @@ public class Customer2 {
 	private long id;
 	private String name;
 	
-	@OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL)
+	/*
+	 * Fetch type can be lazy or eager (LAZY by default)
+	 */
+	@OneToMany(mappedBy = "customer" , cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
 	private Set<PhoneNumber> numbers;
 	
 	public Set<PhoneNumber> getNumbers() {
