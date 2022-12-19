@@ -1,5 +1,6 @@
 package com.vishal.springdata.relationships.oneToMany.entities;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.CascadeType;
@@ -47,6 +48,19 @@ public class Customer2 {
 	
 	public Customer2() {
 		
+	}
+	
+	
+	
+	
+	public void addPhoneNumber(PhoneNumber phNumber) {
+		if(phNumber != null){
+			if(numbers == null) {
+				numbers = new HashSet<>();
+			}
+			phNumber.setCustomer(this);
+			numbers.add(phNumber);
+		}
 	}
 	
 }
