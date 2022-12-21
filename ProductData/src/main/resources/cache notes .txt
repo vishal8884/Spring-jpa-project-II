@@ -27,3 +27,16 @@ eg -> 1) ehcatche
  3) Create ehcache.xml     //config file for ehcatche
  4) make entities cacheable
  5) Test Caching
+ 
+ 
+ 
+ 
+ Cache Concurrency stratagy
+ 
+ 1) READ_ONLY -> Only when read only...takes data from db and displays to user...if tried to updated exception will be thrown
+ 2) NONSTRICT_READ_WRITE -> not fully consistancy
+ 3) READ_WRITE -> more consistancy...it has lock with cache
+ 4) TRANSACTIONAL -> if we have 2 db or distributed transaction
+ 
+ 
+ 
