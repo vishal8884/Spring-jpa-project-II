@@ -10,3 +10,20 @@ eg -> 1) ehcatche
       3) jboss Tree cache
       4) OS cache
       5) TangoSol cache
+      
+      
+      
+ EH Cache
+ 
+ -> Fast and light weight
+ -> In memory and disk based
+ -> timeout, total life time
+ 
+ 
+ steps to enable EH caache
+ 
+ 1) Add maven dependency
+ 2) enable catching in properties file
+ 3) Create ehcache.xml     //config file for ehcatche
+ 4) make entities cacheable
+ 5) Test Caching
