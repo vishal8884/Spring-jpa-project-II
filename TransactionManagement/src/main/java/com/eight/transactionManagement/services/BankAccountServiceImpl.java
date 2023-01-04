@@ -18,7 +18,7 @@ public class BankAccountServiceImpl implements BankAccountService{
 	/*
 	 * when we mark @Tranactional...
 	 * if exception occurs it rolls back
-	 * its like full method is executed or none
+	 * its like full method is executed or none  (All or Nothing) -> Atomicity
 	 */
 	@Override
 	@Transactional
