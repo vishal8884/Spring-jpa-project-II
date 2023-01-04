@@ -1,13 +1,22 @@
 package com.vishal.springdata.product.entities;
 
+import java.io.Serializable;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-public class Product {
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+public class Product implements Serializable{
 
+	private static final long serialVersionUID = 1L;
+	
+	
 	@Id
 	private int id;
 	private String name;
