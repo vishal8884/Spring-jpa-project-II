@@ -1,8 +1,16 @@
 package com.eight.springData.patientScheduling.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Embeddable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Embeddable
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Insurance {
 
 	private String providerName;

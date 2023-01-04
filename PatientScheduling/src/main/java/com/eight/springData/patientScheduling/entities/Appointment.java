@@ -1,11 +1,22 @@
 package com.eight.springData.patientScheduling.entities;
 
 import java.sql.Timestamp;
+import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 
+@Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Appointment {
 
+	@Id
 	private Long id;
 	private Timestamp appointmentTime;
 	private boolean started;
