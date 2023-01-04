@@ -24,6 +24,9 @@ class TransactionManagementApplicationTests {
 		service.addData(ba);
 	}
 	
+	/*
+	 * Run time exception will happen from service layer
+	 */
 	@Test
 	public void testTransfer() {
 		service.tranfer(500);
