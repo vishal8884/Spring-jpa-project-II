@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eight.clinicals.entities.Patient;
 import com.eight.clinicals.repository.patientRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class PatientController {
 
+	@Autowired
 	private patientRepository patientRepo;
 	
-	@Autowired
-    public PatientController(patientRepository patientRepo) {
-    	this.patientRepo = patientRepo;
-	}
 	
 	@RequestMapping(value = "/patients", method = RequestMethod.GET)
 	public List<Patient> getPatients(){
