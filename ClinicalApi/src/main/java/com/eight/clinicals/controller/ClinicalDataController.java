@@ -59,6 +59,7 @@ public class ClinicalDataController {
 		
 		for(ClinicalData eachEntry : duplicateClinicalData) {
 			
+			//One person can have only one component thats why this filter logic is added
 			if(filters.containsKey(eachEntry.getComponentName())) { //filter duplicates
 				clinicalData.remove(eachEntry);
 				continue;
